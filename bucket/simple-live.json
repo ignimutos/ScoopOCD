@@ -18,7 +18,8 @@
     ],
     "checkver": {
         "script": [
-            "$data = (Invoke-RestMethod 'https://api.github.com/repositories/607042713/releases?per_page=7')",
+            "$header = @{'Authorization' = \"Bearer $env:SCOOP_GH_TOKEN\"}",
+            "$data = (Invoke-RestMethod 'https://api.github.com/repositories/607042713/releases?per_page=7' -Header $header)",
             "$latest = $data | Where-Object { $_.body -like '*Windows/Xbox*' } | Select-Object -First 1",
             "$latest.assets | Where-Object { $_.name -match '([\\d.]+)\\+\\d+' }  | Select-Object -First 1",
             "Write-Output \"$($matches[1])\""
