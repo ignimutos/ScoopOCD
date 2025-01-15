@@ -17,14 +17,8 @@
         "& \"$bucketsdir\\ocd\\bin\\cleanup.ps1\" \"$env:AppData\\com.xycz\\simple_live_app\" -WithParent"
     ],
     "checkver": {
-        "script": [
-            "$header = @{'Authorization' = \"Bearer $env:SCOOP_GH_TOKEN\"}",
-            "$data = (Invoke-RestMethod 'https://api.github.com/repositories/607042713/releases?per_page=7' -Header $header)",
-            "$latest = $data | Where-Object { $_.body -like '*Windows/Xbox*' } | Select-Object -First 1",
-            "$latest.assets | Where-Object { $_.name -match '([\\d.]+)\\+\\d+' }  | Select-Object -First 1",
-            "Write-Output \"$($matches[1])\""
-        ],
-        "regex": "(.*)"
+        "url": "https://github.com/xiaoyaocz/dart_simple_live/tags",
+        "regex": "releases/tag/v([\\d\\.]*)"
     },
     "autoupdate": {
         "architecture": {
