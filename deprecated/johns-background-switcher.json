@@ -1,0 +1,24 @@
+{
+    "version": "5.9",
+    "homepage": "https://johnsad.ventures/software/backgroundswitcher/windows/",
+    "license": "Unknown",
+    "architecture": {
+        "64bit": {
+            "url": "https://dl.johnsadventures.com/SwitcherSetup59.exe#dl.7z",
+            "hash": "1F8CFA727A01AC3AE59CB2287DB410AAA4E3E3BD9C3141FB3B453A9F51EDDB3F"
+        }
+    },
+    "shortcuts": [["BackgroundSwitcher.exe", "BackgroundSwitcher"]],
+    "post_install": [
+        "Remove-Item $dir\\`$PLUGINSDIR, $dir\\uninst.exe -Force -Recurse"
+    ],
+    "persist": "BackgroundSwitcher.exe.config",
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://dl.johnsadventures.com/SwitcherSetup$majorVersion$minorVersion.exe#dl.7z"
+            }
+        }
+    }
+}

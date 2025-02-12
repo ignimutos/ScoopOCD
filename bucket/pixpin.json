@@ -1,0 +1,29 @@
+{
+    "version": "1.9.5.0",
+    "description": "A powerful and easy-to-use screenshot and snipping tool that helps you boost your efficiency",
+    "homepage": "https://pixpin.com",
+    "license": "Unknown",
+    "architecture": {
+        "64bit": {
+            "url": "https://download.pixpinapp.com/PixPin_1.9.5.0.zip",
+            "hash": "2743f5e32a9acfd8d5e3b7a5e10c725ea21268b6fbc5c1f1ca167c7618d14007"
+        }
+    },
+    "extract_dir": "PixPin",
+    "shortcuts": [["PixPin.exe", "PixPin"]],
+    "persist": ["Config", "Data", "History"],
+    "post_install": [
+        "Set-Value 'Config\\PixPinConfig.json' 'System.Update.AutoCheckUpdate', 'v' $false"
+    ],
+    "checkver": {
+        "url": "https://pixpin.com",
+        "regex": "\\/official-log\\/([\\d.]+)\\.html"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://download.pixpinapp.com/PixPin_$version.zip"
+            }
+        }
+    }
+}
