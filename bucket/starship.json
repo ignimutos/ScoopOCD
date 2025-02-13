@@ -11,7 +11,7 @@
         "vcredist": "extras/vcredist2022"
     },
     "env_set": {
-        "STARSHIP_CONFIG": "$persist_dir/starship.toml"
+        "STARSHIP_CONFIG": "$persist_dir\\starship.toml"
     },
     "post_install": "ensure $persist_dir | Out-Null",
     "architecture": {
