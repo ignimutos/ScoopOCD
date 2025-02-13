@@ -15,9 +15,6 @@
             "extract_dir": "Godot_v4.3-stable_mono_win32"
         }
     },
-    "env_set": {
-        "GODOT4": "$dir\\godot-mono.exe"
-    },
     "persist": ["editor_data"],
     "persist_link": ["$env:AppData\\Godot"],
     "pre_install": [
