@@ -20,6 +20,7 @@
         "Get-Item \"$dir\\Godot_*.exe\" | Rename-Item -NewName 'godot.exe'",
         "New-Item \"$dir\\_sc_\" | Out-Null"
     ],
+    "post_install": "Set-Value -File \"editor_data\\editor_settings-$version.tres\" -Type 'ini' -ValuePath 'resource', 'network/connection/engine_version_update_mode' -Value 0",
     "bin": [["godot.console.exe", "godot"]],
     "shortcuts": [["godot.exe", "Godot Engine"]],
     "checkver": {
