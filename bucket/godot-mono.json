@@ -15,14 +15,17 @@
             "extract_dir": "Godot_v4.3-stable_mono_win32"
         }
     },
+    "env_set": {
+        "GODOT4": "$dir\\godot-mono.exe"
+    },
     "persist": ["editor_data"],
     "persist_link": ["$env:AppData\\Godot"],
     "pre_install": [
-        "Remove-Item \"$dir\\Godot_*_console.*\"",
+        "Get-Item \"$dir\\Godot_*_console.exe\" | Rename-Item -NewName 'godot-mono.console.exe'",
         "Get-Item \"$dir\\Godot_*.exe\" | Rename-Item -NewName 'godot-mono.exe'",
         "New-Item \"$dir\\_sc_\" | Out-Null"
     ],
-    "bin": "godot-mono.exe",
+    "bin": [["godot-mono.console.exe", "godot-mono"]],
     "shortcuts": [["godot-mono.exe", "Godot Engine (Mono)"]],
     "checkver": {
         "url": "https://github.com/godotengine/godot/releases/latest",
