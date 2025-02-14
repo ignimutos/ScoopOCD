@@ -1,0 +1,48 @@
+{
+    "homepage": "https://vivaldi.com",
+    "version": "7.1.3570.50",
+    "license": "https://vivaldi.com/zh-hans/privacy/vivaldi-end-user-license-agreement",
+    "architecture": {
+        "64bit": {
+            "url": "https://downloads.vivaldi.com/stable/Vivaldi.7.1.3570.50.x64.exe",
+            "hash": "7871A3DB72621FFD5574A8F494775A682FE4933B102F38784C166ABB814FEB92"
+        },
+        "32bit": {
+            "url": "https://downloads.vivaldi.com/stable/Vivaldi.7.1.3570.50.exe",
+            "hash": "DF4FDC85E1C52287FA42A4051D0D6810FA159098511E8746448AF3AC3C3A0481"
+        },
+        "arm64": {
+            "url": "https://downloads.vivaldi.com/stable/Vivaldi.7.1.3570.50.arm64.exe",
+            "hash": "9B5F725FAF8AE5DBC45BE4DB417A9253DD2E32F51D2B61EB81DC26098660AC74"
+        }
+    },
+    "persist": ["User Data"],
+    "installer": {
+        "script": [
+            "Start-Process \"$dir\\$fname\" -ArgumentList '--vivaldi-silent', '--do-not-launch-chrome', '--vivaldi-standalone', \"--vivaldi-install-dir=$dir\" -Wait"
+        ]
+    },
+    "post_install": [
+        "Remove-Item \"$dir\\$fname\"",
+        "Remove-Item \"$dir\\Application\\update_notifier.exe\""
+    ],
+    "post_uninstall": "Remove-Item \"$env:UserProfile\\.vivaldi_reporting_data\" -ErrorAction SilentlyContinue",
+    "checkver": {
+        "url": "https://vivaldi.com/download",
+        "regex": "https://downloads.vivaldi.com/stable/Vivaldi.(.*?).x64.exe"
+    },
+    "shortcuts": [["Application\\vivaldi.exe", "Vivaldi"]],
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://downloads.vivaldi.com/stable/Vivaldi.$version.x64.exe"
+            },
+            "32bit": {
+                "url": "https://downloads.vivaldi.com/stable/Vivaldi.$version.exe"
+            },
+            "arm64": {
+                "url": "https://downloads.vivaldi.com/stable/Vivaldi.$version.arm64.exe"
+            }
+        }
+    }
+}
