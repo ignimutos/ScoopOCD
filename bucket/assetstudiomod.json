@@ -1,0 +1,14 @@
+{
+    "version": "0.18.0",
+    "description": "Tool for exploring, extracting and exporting Unity assets and assetbundles.",
+    "homepage": "https://github.com/aelurum/AssetStudio",
+    "license": "MIT",
+    "url": "https://github.com/aelurum/AssetStudio/releases/download/v0.18.0/AssetStudioModGUI_net8_win64.zip",
+    "hash": "08963FB2052A91D329A5132077DC03397C2F93DEF0B177EAD3380D741549D46E",
+    "bin": "AssetStudioModGUI.exe",
+    "shortcuts": [["AssetStudioModGUI.exe", "AssetStudioMod"]],
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/aelurum/AssetStudio/releases/download/v$version/AssetStudioModGUI_net8_win64.zip"
+    }
+}
