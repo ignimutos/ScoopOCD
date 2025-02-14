@@ -13,7 +13,10 @@
         "Remove-Item $dir\\`$PLUGINSDIR, $dir\\uninst.exe -Force -Recurse"
     ],
     "persist": "BackgroundSwitcher.exe.config",
-    "checkver": "github",
+    "checkver": {
+        "url": "https://johnsad.ventures/software/backgroundswitcher/windows",
+        "regex": "Version (\\d\\.\\d)"
+    },
     "autoupdate": {
         "architecture": {
             "64bit": {
