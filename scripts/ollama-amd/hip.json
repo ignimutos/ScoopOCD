@@ -1,0 +1,8 @@
+{
+    "gfx1031": "https://github.com/likelovewant/ROCmLibs-for-gfx1103-AMD780M-APU/releases/download/v0.6.1.2/rocm.gfx1031.for.hip.sdk.6.1.2.7z",
+    "gfx1032": "https://github.com/likelovewant/ROCmLibs-for-gfx1103-AMD780M-APU/releases/download/v0.6.1.2/rocm.gfx1032.for.hip.sdk.6.1.2.navi21.logic.7z",
+    "gfx1034,gfx1035,gfx1036": "https://github.com/likelovewant/ROCmLibs-for-gfx1103-AMD780M-APU/releases/download/v0.6.1.2/rocm.gfx1034-gfx1035-gfx1036.for.hip.sdk.6.1.2.7z",
+    "gfx1103": "https://github.com/likelovewant/ROCmLibs-for-gfx1103-AMD780M-APU/releases/download/v0.6.1.2/rocm.gfx1103.AMD.780M.phoenix.V5.0.for.hip.sdk.6.1.2.7z",
+    "gfx1150": "https://github.com/likelovewant/ROCmLibs-for-gfx1103-AMD780M-APU/releases/download/v0.6.1.2/rocm.gfx1150.for.hip.skd.6.1.2.7z",
+    "gfx803,gfx900,gfx1010,gfx1030,gfx1031,gfx1032,gfx1100,gfx1101,gfx1102": "https://github.com/YellowRoseCx/koboldcpp-rocm/releases/download/deps-v6.2.0/carcoonzyk-rocBLAS-for-rocm-5.7-on-windows.7z"
+}
