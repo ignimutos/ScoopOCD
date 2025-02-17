@@ -23,8 +23,8 @@
         ]
     },
     "post_install": [
-        "Remove-Item \"$dir\\$fname\"",
-        "Remove-Item \"$dir\\Application\\update_notifier.exe\""
+        "cd \"$dir\"",
+        "Remove-Item \"$fname\", \"Application\\update_notifier.exe\", \"Application\\$version\\Installer\" -Force -Recurse | Out-Null"
     ],
     "post_uninstall": "Remove-Item \"$env:UserProfile\\.vivaldi_reporting_data\" -ErrorAction SilentlyContinue",
     "checkver": {
