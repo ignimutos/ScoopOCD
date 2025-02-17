@@ -12,6 +12,7 @@
     "innosetup": true,
     "persist": ["AppData", "work-dir"],
     "shortcuts": [["VideoCaptioner.exe", "VideoCaptioner"]],
+    "post_uninstall": "Remove-Item \"$env:AppData\\VideoCaptioner\" -Force -Recurse | Out-Null",
     "checkver": "github",
     "autoupdate": {
         "architecture": {
