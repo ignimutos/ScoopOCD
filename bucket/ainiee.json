@@ -17,7 +17,10 @@
         "Set-Content \"$dir\\Resource\\config.json\" '{}'"
     ],
     "persist": [["Resource\\config.json", "config.json"]],
-    "checkver": "github",
+    "checkver": {
+        "github": "https://github.com/NEKOparapa/AiNiee",
+        "regex": "AiNiee([\\d\\.]*)"
+    },
     "autoupdate": {
         "architecture": {
             "64bit": {
