@@ -16,9 +16,8 @@
             ]
         }
     },
-    "shortcuts": [
-        ["Notion.exe", "Notion", "--user-data-dir=\"$persist_dir\\User Data\""]
-    ],
+    "persist_link": [["$env:AppData\\Notion", "User Data"]],
+    "shortcuts": [["Notion.exe", "Notion"]],
     "checkver": {
         "url": "https://desktop-release.notion-static.com/latest.yml",
         "regex": "version:\\s+([\\d.]+)"
