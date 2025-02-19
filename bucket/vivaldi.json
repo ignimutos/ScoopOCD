@@ -1,26 +1,24 @@
 {
     "homepage": "https://vivaldi.com",
-    "version": "7.1.3570.50",
+    "version": "7.1.3570.54",
     "license": "https://vivaldi.com/zh-hans/privacy/vivaldi-end-user-license-agreement",
     "architecture": {
         "64bit": {
-            "url": "https://downloads.vivaldi.com/stable/Vivaldi.7.1.3570.50.x64.exe",
-            "hash": "7871A3DB72621FFD5574A8F494775A682FE4933B102F38784C166ABB814FEB92"
+            "url": "https://downloads.vivaldi.com/stable/Vivaldi.7.1.3570.54.x64.exe",
+            "hash": "dae1d3070e86a4f16df1c4dbedfc46929d8606f8fe9ef74f00218334d457fe57"
         },
         "32bit": {
-            "url": "https://downloads.vivaldi.com/stable/Vivaldi.7.1.3570.50.exe",
-            "hash": "DF4FDC85E1C52287FA42A4051D0D6810FA159098511E8746448AF3AC3C3A0481"
+            "url": "https://downloads.vivaldi.com/stable/Vivaldi.7.1.3570.54.exe",
+            "hash": "3f038cc79a127e718f126bc00f48de0df0fba9ebeffca68021a45c3a1a46ec3d"
         },
         "arm64": {
-            "url": "https://downloads.vivaldi.com/stable/Vivaldi.7.1.3570.50.arm64.exe",
-            "hash": "9B5F725FAF8AE5DBC45BE4DB417A9253DD2E32F51D2B61EB81DC26098660AC74"
+            "url": "https://downloads.vivaldi.com/stable/Vivaldi.7.1.3570.54.arm64.exe",
+            "hash": "80f67f5002f47a41e58156c78315279be9e339d670f442f1eb060addc158522e"
         }
     },
-    "persist": ["User Data"],
+    "persist": "User Data",
     "installer": {
-        "script": [
-            "Start-Process \"$dir\\$fname\" -ArgumentList '--vivaldi-silent', '--do-not-launch-chrome', '--vivaldi-standalone', \"--vivaldi-install-dir=$dir\" -Wait"
-        ]
+        "script": "Start-Process \"$dir\\$fname\" -ArgumentList '--vivaldi-silent', '--do-not-launch-chrome', '--vivaldi-standalone', \"--vivaldi-install-dir=$dir\" -Wait"
     },
     "post_install": [
         "cd \"$dir\"",
@@ -31,7 +29,12 @@
         "url": "https://vivaldi.com/download",
         "regex": "https://downloads.vivaldi.com/stable/Vivaldi.(.*?).x64.exe"
     },
-    "shortcuts": [["Application\\vivaldi.exe", "Vivaldi"]],
+    "shortcuts": [
+        [
+            "Application\\vivaldi.exe",
+            "Vivaldi"
+        ]
+    ],
     "autoupdate": {
         "architecture": {
             "64bit": {
