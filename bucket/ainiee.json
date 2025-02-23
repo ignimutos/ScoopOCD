@@ -18,8 +18,7 @@
     ],
     "persist": [["Resource\\config.json", "config.json"]],
     "checkver": {
-        "github": "https://github.com/NEKOparapa/AiNiee",
-        "regex": "AiNiee([\\d\\.]*)"
+        "regex": "/releases/tag/AiNiee([\\d\\.]+)"
     },
     "autoupdate": {
         "architecture": {
