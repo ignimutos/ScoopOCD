@@ -6,7 +6,7 @@
         "identifier": "Freeware",
         "url": "https://github.com/cheat-engine/cheat-engine/issues/60#issuecomment-467317576"
     },
-    "url": "https://d.cdnpure.com/b/exe/Q2hlYXQgRW5naW5lX3VwdG9kb3duXzE2Mjg1XzcuNV8yYTFmOGQxNA",
+    "url": "https://d.cdnpure.com/b/exe/Q2hlYXQgRW5naW5lX3VwdG9kb3duXzE2Mjg1XzcuNV8yYTFmOGQxNA#dl.exe",
     "hash": "a29a7d875253228152dca7d854e0890c18f6a73438d1bf2d276dbfe07acfecc5",
     "architecture": {
         "64bit": {
@@ -25,14 +25,13 @@
     },
     "depends": "innounp",
     "persist": [["languages\\custom"], ["languages\\language.ini"]],
-    "pre_install": "Get-Item \"$dir\\*\" -Exclude *.json | Foreach-Object { Rename-Item $_ cheat-engine.exe }",
     "installer": {
         "script": [
-            "innounp \"$dir\\cheat-engine.exe\" -e '{tmp}\\CheatEngine*.exe' | Out-Null",
+            "innounp \"$dir\\$fname\" -e '{tmp}\\CheatEngine*.exe' | Out-Null",
             "$installer=(Get-Item CheatEngine*.exe)",
             "innounp \"$installer\" -x '{app}\\*' -d\"$dir\" | Out-Null",
             "Move-Item \"$dir\\{app}\\*\" \"$dir\"",
-            "Remove-Item \"$dir\\cheat-engine.exe\", \"$installer\", \"$dir\\{app}\""
+            "Remove-Item \"$dir\\$fname\", \"$installer\", \"$dir\\{app}\""
         ]
     },
     "post_install": "reg import \"$persist_dir\\settings.reg\"",
