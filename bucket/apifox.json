@@ -1,16 +1,16 @@
 {
-    "version": "2.6.50",
+    "version": "2.6.51",
     "description": "All-in-one collaboration platform for API documentation, API debugging, API Mock and API test automation.",
     "homepage": "https://apifox.com",
     "license": "Freeware",
     "architecture": {
         "64bit": {
             "url": "https://file-assets.apifox.com/download/Apifox-windows-latest.zip",
-            "hash": "1bc8b5135ac40f620b132fe939981160c76ea522f83b3cc6955a03ab6c40e719"
+            "hash": "7d72cc242bfab71b67318d6c0525fe2c916c4756fb0d909c5b3cb0e7cd139211"
         },
         "32bit": {
             "url": "https://file-assets.apifox.com/download/Apifox-win32-latest.zip",
-            "hash": "c7f0cdf79262c311f3641892befa58e4af4a33636bbc7f16b78d11628a0c2fcd"
+            "hash": "adbfa6b3cf0055649da86ebefb97033338efbd86de0f60393b487ba991c5bfc5"
         }
     },
     "pre_install": [
