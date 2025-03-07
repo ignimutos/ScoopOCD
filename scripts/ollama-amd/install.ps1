@@ -1,8 +1,3 @@
-$base_url = ($Manifest.url -split '/', -2)[0]
-debug "download rocm file from $base_url/ollama-windows-amd64.7z"
-Invoke-WebRequest -Uri "$base_url/ollama-windows-amd64.7z" -OutFile "$dir\rocm.7z"
-Expand-7zipArchive "$dir\rocm.7z" -ExtractDir 'windows-amd64' -Removal -Overwrite 'All'
-
 $gpu = (Get-CimInstance -ClassName Win32_VideoController).Name
 $arch = (Get-Content "$PSScriptRoot\arch.json" | ConvertFrom-Json -AsHashtable).$gpu
 debug "gpu: $gpu, arch: $arch"
@@ -14,6 +9,6 @@ if (!$hip_url) {
     exit 1
 }
 Invoke-WebRequest -Uri "$hip_url" -OutFile "$dir\hip.7z"
-Expand-7zipArchive "$dir\hip.7z" -DestinationPath "$env:HIP_PATH\bin" -Removal -Overwrite 'All'
-Move-Item "$env:HIP_PATH\bin\library\*" "$env:HIP_PATH\bin\rocblas\library\" -Force
-Remove-Item "$env:HIP_PATH\bin\library"
+Expand-7zipArchive "$dir\hip.7z" -DestinationPath "$dir\lib\ollama\rocm" -Removal -Overwrite 'All'
+Move-Item "$dir\lib\ollama\rocm\library\*" "$dir\lib\ollama\rocm\rocblas\library\" -Force
+Remove-Item "$dir\lib\ollama\rocm\library"
