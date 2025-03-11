@@ -1,0 +1,40 @@
+{
+    "version": "2.1.2",
+    "description": "Continuation of Clash Verge - A Clash Meta GUI based on Tauri.",
+    "homepage": "https://github.com/clash-verge-rev/clash-verge-rev",
+    "license": "GPL-3.0-only",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.1.2/Clash.Verge_2.1.2_x64-setup.exe#/dl.7z",
+            "hash": "77ce3ba81116e1e5e4f69a372a96e00d0dbaeb57eefce6028404b9c30b4f81d4"
+        },
+        "arm64": {
+            "url": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.1.2/Clash.Verge_2.1.2_arm64-setup.exe#/dl.7z",
+            "hash": "d15df72bf7c5f2730ed7e8731ca31bbb9398a2db7b4a941910f71e7571ba19e7"
+        }
+    },
+    "persist_link": [
+        ["$env:AppData\\io.github.clash-verge-rev.clash-verge-rev", "AppData"],
+        [
+            "$env:LocalAppData\\io.github.clash-verge-rev.clash-verge-rev",
+            "LocalAppData"
+        ]
+    ],
+    "pre_install": "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\uninst*\" -Force -Recurse",
+    "pre_uninstall": [
+        "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
+        "Start-Process \"$dir\\resources\\uninstall-service.exe\" -Wait -Verb 'RunAs' -WindowStyle 'Hidden'; Start-Sleep -Seconds 3"
+    ],
+    "shortcuts": [["clash-verge.exe", "Clash Verge"]],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v$version/Clash.Verge_$version_x64-setup.exe#/dl.7z"
+            },
+            "arm64": {
+                "url": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v$version/Clash.Verge_$version_arm64-setup.exe#/dl.7z"
+            }
+        }
+    }
+}
