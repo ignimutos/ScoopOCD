@@ -1,10 +1,10 @@
 {
-    "version": "1.1.10",
+    "version": "1.1.13",
     "description": "a desktop client that supports for multiple LLM providers, available on Windows, Mac and Linux.",
     "homepage": "https://cherry-ai.com",
     "license": "Apache-2.0",
-    "url": "https://github.com/CherryHQ/cherry-studio/releases/download/v1.1.10/Cherry-Studio-1.1.10-portable.exe",
-    "hash": "4051949316170cb605cbdea886d1fbb447fd35e6b4002c1ef4de223784c7b5a7",
+    "url": "https://github.com/CherryHQ/cherry-studio/releases/download/v1.1.13/Cherry-Studio-1.1.13-portable.exe",
+    "hash": "8fff81ad9408fc8ef20bdc3fd9740d0328d9630dbae746163da5fe9326b69ecf",
     "pre_install": "Rename-Item \"$dir\\$fname\" \"Cherry-Studio.exe\" -Force",
     "shortcuts": [
         [
