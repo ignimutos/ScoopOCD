@@ -1,17 +1,32 @@
 {
-    "version": "4.99.32",
+    "version": "5.0.0",
     "description": "a VPN built from the ground up to resist ISP-level censorship. Unlike traditional VPNs that rely on security through obscurity, Geph's architecture and protocols are specifically engineered to be nearly invisible against ISPs and network adversaries.",
     "homepage": "https://geph.io",
     "license": {
         "identifier": "GPL-3.0-only",
         "url": "https://github.com/geph-official/geph4-client?tab=GPL-3.0-1-ov-file"
     },
-    "url": "https://dl.geph.io/geph-releases/windows-stable/4.99.32/geph-windows-setup.exe",
-    "hash": "168F1B450E0117DBD5226FB4CAC35787AFA6DD4DD6D52DF18A9C373B9FE22B84",
+    "url": "https://dl.geph.io/geph-releases/windows-stable/5.0.0/geph-windows-setup.exe",
+    "hash": "f820a9df11a2278960aa256eb092036c06e4b44a582972d47388830877eae29d",
     "innosetup": true,
-    "persist_link": [["$env:AppData\\geph4-credentials", "AppData"]],
-    "bin": [["geph4-client.exe", "gephc"]],
-    "shortcuts": [["gephgui-wry.exe", "Geph GUI"]],
+    "persist_link": [
+        [
+            "$env:AppData\\geph4-credentials",
+            "AppData"
+        ]
+    ],
+    "bin": [
+        [
+            "geph4-client.exe",
+            "gephc"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "gephgui-wry.exe",
+            "Geph GUI"
+        ]
+    ],
     "checkver": {
         "url": "https://geph.io/en",
         "regex": "geph-releases/windows-stable/([^/]+)"
