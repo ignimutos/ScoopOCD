@@ -1,12 +1,12 @@
 {
-    "version": "6.1",
+    "version": "6.2",
     "description": "一款专注于 Ai 翻译的工具，可以用来一键自动翻译 游戏、小说、字幕 等复杂的长文本内容",
     "homepage": "https://github.com/NEKOparapa/AiNiee",
     "license": "GPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/NEKOparapa/AiNiee/releases/download/AiNiee6.1/AiNiee6.1.zip",
-            "hash": "12a0f3a0f40a122fbbc5d40434b85feecd374207cc9e6ed6f6655a0a854500d0"
+            "url": "https://github.com/NEKOparapa/AiNiee/releases/download/AiNiee6.2/AiNiee6.2.zip",
+            "hash": "36ba4fce5d724a730b28777c451cc95c62cd61b85c082cbc50bd9952d310300a"
         }
     },
     "extract_dir": "dist",
