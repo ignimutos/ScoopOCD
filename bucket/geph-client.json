@@ -1,13 +1,13 @@
 {
-    "version": "5.0.4",
+    "version": "5.0.5",
     "description": "a VPN built from the ground up to resist ISP-level censorship. Unlike traditional VPNs that rely on security through obscurity, Geph's architecture and protocols are specifically engineered to be nearly invisible against ISPs and network adversaries.",
     "homepage": "https://geph.io",
     "license": {
         "identifier": "GPL-3.0-only",
         "url": "https://github.com/geph-official/geph4-client?tab=GPL-3.0-1-ov-file"
     },
-    "url": "https://dl.geph.io/geph-releases/windows-stable/5.0.4/geph-windows-setup.exe",
-    "hash": "05825aec2e786b63051aaeb75b92a0f1d13b59c5f6a896b097cccfa70424a9c8",
+    "url": "https://dl.geph.io/geph-releases/windows-stable/5.0.5/geph-windows-setup.exe",
+    "hash": "897e7d8db7a1982be7f4820f587013ab048a3127debe204a3da5c8f30c838cf3",
     "innosetup": true,
     "persist_link": [
         [
