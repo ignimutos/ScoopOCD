@@ -1,12 +1,12 @@
 {
-    "version": "2025.05.15",
+    "version": "2025.06.19",
     "homepage": "https://github.com/dyphire/mpv-config",
     "license": "https://raw.githubusercontent.com/dyphire/mpv-config/master/LICENSE.MD",
     "notes": "run installer/mpv-install.bat to register file association",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/dyphire/mpv-config/releases/download/mpv_config-2025.05.15/mpv_config-2025.05.15.7z",
-            "hash": "b4f67444c89e4a93038b728abbcec84422e3f2923a1891fceb603842810c13a5"
+            "url": "https://github.com/dyphire/mpv-config/releases/download/mpv_config-2025.06.19/mpv_config-2025.06.19.7z",
+            "hash": "f65c8471f93b655b44f70f21e52b48547e54b3b88e81bc6ff4dce752b45cdd6d"
         }
     },
     "installer": {
