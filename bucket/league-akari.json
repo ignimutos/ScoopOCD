@@ -23,7 +23,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/LeagueAkari/LeagueAkari/releases/download/v$version/League.Akari-$version+$majorVersion0$minorVersion0$patchVersion-win.7z"
+                "url": "https://github.com/LeagueAkari/LeagueAkari/releases/download/v$version/League.Akari-$version-win.7z"
             }
         }
     }
