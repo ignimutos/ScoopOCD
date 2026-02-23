@@ -1,12 +1,12 @@
 {
-    "version": "20250809",
-    "homepage": "https://github.com/hooke007/MPV_lazy",
-    "license": "https://raw.githubusercontent.com/hooke007/MPV_lazy/main/LICENSE.MD",
+    "version": "20260210",
+    "homepage": "https://github.com/hooke007/mpv_PlayKit",
+    "license": "https://raw.githubusercontent.com/hooke007/mpv_PlayKit/main/LICENSE.MD",
     "notes": "run installer/mpv-install.bat to register file association",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/hooke007/MPV_lazy/releases/download/20250809/mpv-lazy-20250809.exe#dl.7z",
-            "hash": "aae41c9ac863f26a3038195ef1b6d89b83b58f41793e50730ddaf71629d2bcbf"
+            "url": "https://github.com/hooke007/mpv_PlayKit/releases/download/20260210/mpv-lazy-20260210.exe#dl.7z",
+            "hash": "3bf809718be71c4c7b7226041633a4ec03a60f4546fbbfb42ec0faed075a7cd4"
         }
     },
     "extract_dir": "mpv-lazy",
@@ -25,7 +25,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/hooke007/MPV_lazy/releases/download/$version/mpv-lazy-$version.exe#dl.7z"
+                "url": "https://github.com/hooke007/mpv_PlayKit/releases/download/$version/mpv-lazy-$version.exe#dl.7z"
             }
         }
     }
