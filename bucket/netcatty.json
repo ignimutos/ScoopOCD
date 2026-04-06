@@ -1,0 +1,40 @@
+{
+    "version": "1.0.68",
+    "description": "SSH workspace, SFTP, and terminals in one.",
+    "homepage": "https://netcatty.app",
+    "license": "GPL-3.0-only",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/binaricat/Netcatty/releases/download/v1.0.68/Netcatty-1.0.68-win-x64.exe",
+            "hash": "923EAA38213124194F9EFA890C7CA15D466E248BB533AA7CC1A266A5EE0A07DB"
+        },
+        "32bit": {
+            "url": "https://github.com/binaricat/Netcatty/releases/download/v1.0.68/Netcatty-1.0.68-win.exe"
+        }
+    },
+    "pre_install": [
+        "Expand-7zipArchive $(Get-Item \"$dir\\Netcatty*.exe\").FullName -Destination \"$dir\" -Removal",
+        "Get-Item \"$dir\\`$PLUGINSDIR\\app*.7z\" | Expand-7zipArchive -Destination \"$dir\"",
+        "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall*\" -Recurse"
+    ],
+    "shortcuts": [
+        [
+            "Netcatty.exe",
+            "Netcatty",
+            "--user-data-dir=\"$persist_dir\\User Data\""
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/binaricat/Netcatty"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/binaricat/Netcatty/releases/download/v$version/Netcatty-$version-win-x64.exe"
+            },
+            "32bit": {
+                "url": "https://github.com/binaricat/Netcatty/releases/download/v$version/Netcatty-$version-win.exe"
+            }
+        }
+    }
+}
