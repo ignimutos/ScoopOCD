@@ -1,12 +1,12 @@
 {
-    "version": "3.9.3",
+    "version": "3.9.4",
     "description": "A full-featured download manager — rebuilt from the ground up",
     "homepage": "https://motrix-next.pages.dev",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/AnInsomniacy/motrix-next/releases/download/v3.9.3/MotrixNext_3.9.3_x64-setup.exe#/dl.7z",
-            "hash": "c0133310e483cf59d6bf65e7c3e1c2a5c1baa0e377f78cd257f6af43b7862309"
+            "url": "https://github.com/AnInsomniacy/motrix-next/releases/download/v3.9.4/MotrixNext_3.9.4_x64-setup.exe#/dl.7z",
+            "hash": "80481d1e3141138138896ac74b9995d3d22d775e98c401df1f525c76c910bf42"
         }
     },
     "pre_install": "Remove-Item \"$dir\\`$PLUGINSDIR\" -Recurse",
