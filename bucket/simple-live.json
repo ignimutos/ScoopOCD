@@ -1,12 +1,12 @@
 {
-    "version": "1.11.4",
+    "version": "1.11.7",
     "description": "Simple and easy live streaming watching",
     "homepage": "https://github.com/Drunk-Dream/dart_simple_live_for_scoop",
     "license": "GPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/Drunk-Dream/dart_simple_live_for_scoop/releases/download/v1.11.4/simple_live_app-1.11.4+11104-windows.zip",
-            "hash": "225447b60b06f9d59f5fc481954171a565d9b5af9f3329c130ea73819cf16f95"
+            "url": "https://github.com/Drunk-Dream/dart_simple_live_for_scoop/releases/download/v1.11.7/simple_live_app-1.11.7+11107-windows.zip",
+            "hash": "fb3fdc835711bccaffdad554ba399a84fcfb1eb8c844d2f2a0a52cbeeeecf96f"
         }
     },
     "shortcuts": [
