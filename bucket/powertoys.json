@@ -21,17 +21,15 @@
         }
     },
     "persist_link": [
-        [
-            "$env:LocalAppData\\Microsoft\\PowerToys",
-            "LocalAppData"
-        ]
+        ["$env:LocalAppData\\Microsoft\\PowerToys", "LocalAppData"]
     ],
     "installer": {
         "script": [
             "Expand-DarkArchive \"$dir\\$fname\" \"$dir\\.tmp\"",
             "Get-ChildItem \"$dir\\.tmp\\AttachedContainer\\PowerToysUserSetup*.msi\" | Rename-Item -NewName 'PowerToysSetup.msi' -Force",
-            "Expand-MsiArchive \"$dir\\.tmp\\AttachedContainer\\PowerToysSetup.msi\" \"$dir\" -ExtractDir 'PowerToys'",
-            "Remove-Item \"$dir\\.tmp\", \"$dir\\$fname\" -Force -Recurse"
+            "Expand-MsiArchive \"$dir\\.tmp\\AttachedContainer\\PowerToysSetup.msi\" \"$dir\\_extract\" -ExtractDir 'LocalApp'",
+            "Get-ChildItem \"$dir\\_extract\\PowerToys\\*\" -Force | Move-Item -Destination \"$dir\" -Force",
+            "Remove-Item \"$dir\\.tmp\", \"$dir\\_extract\", \"$dir\\$fname\" -Force -Recurse -ErrorAction SilentlyContinue"
         ]
     },
     "post_install": [
@@ -71,12 +69,7 @@
             "}"
         ]
     },
-    "shortcuts": [
-        [
-            "PowerToys.exe",
-            "PowerToys"
-        ]
-    ],
+    "shortcuts": [["PowerToys.exe", "PowerToys"]],
     "checkver": {
         "url": "https://api.github.com/repos/microsoft/PowerToys/releases",
         "jsonpath": "$[0].assets[*].browser_download_url",
