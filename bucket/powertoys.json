@@ -27,9 +27,16 @@
         "script": [
             "Expand-DarkArchive \"$dir\\$fname\" \"$dir\\.tmp\"",
             "Get-ChildItem \"$dir\\.tmp\\AttachedContainer\\PowerToysUserSetup*.msi\" | Rename-Item -NewName 'PowerToysSetup.msi' -Force",
-            "Expand-MsiArchive \"$dir\\.tmp\\AttachedContainer\\PowerToysSetup.msi\" \"$dir\\_extract\" -ExtractDir 'LocalApp'",
-            "Get-ChildItem \"$dir\\_extract\\PowerToys\\*\" -Force | Move-Item -Destination \"$dir\" -Force",
-            "Remove-Item \"$dir\\.tmp\", \"$dir\\_extract\", \"$dir\\$fname\" -Force -Recurse -ErrorAction SilentlyContinue"
+            "$ver = ([xml](Get-Content -Raw \"$dir\\.tmp\\UX\\manifest.xml\" -Encoding utf8)).BurnManifest.EngineVersion",
+            "if (($null -ne $ver) -and ($ver -like \"5.*\")) {",
+            "    Expand-MsiArchive \"$dir\\.tmp\\AttachedContainer\\PowerToysSetup.msi\" \"$dir\" -ExtractDir 'LocalApp\\PowerToys'",
+            "} else {",
+            "    Expand-MsiArchive \"$dir\\.tmp\\AttachedContainer\\PowerToysSetup.msi\" \"$dir\" -ExtractDir 'PowerToys'",
+            "}",
+            "Remove-Item \"$dir\\.tmp\", \"$dir\\$fname\" -Force -Recurse",
+            "Get-Content \"$dir\\WinUI3Apps\\hardlinks.txt\" -ErrorAction Ignore | ForEach-Object {",
+            "    Copy-Item \"$dir\\$_\" \"$dir\\WinUI3Apps\\$_\" -Force",
+            "}"
         ]
     },
     "post_install": [
@@ -62,7 +69,7 @@
             "    $regpath = $regpath.Replace('HKCU', 'HKLM')",
             "}",
             "if (Test-Path -Path $regpath) {",
-            "    Invoke-Expression -Command \"$dir\\uninstall-context.ps1\"",
+            "Invoke-Expression -Command \"$dir\\uninstall-context.ps1\"",
             "    if ($cmd -ne 'uninstall') {",
             "        New-Item -Path $regpath -Force | Out-Null",
             "    }",
