@@ -14,26 +14,18 @@
         }
     },
     "persist_link": [
-        [
-            "$env:AppData\\io.github.clash-verge-rev.clash-verge-rev",
-            "AppData"
-        ],
+        ["$env:AppData\\io.github.clash-verge-rev.clash-verge-rev", "AppData"],
         [
             "$env:LocalAppData\\io.github.clash-verge-rev.clash-verge-rev",
             "LocalAppData"
         ]
     ],
-    "pre_install": "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\uninst*\" -Force -Recurse",
+    "pre_install": "Remove-Item \"$dir\\`$*\", \"$dir\\uninst*\" -Force -Recurse",
     "pre_uninstall": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "Start-Process \"$dir\\resources\\uninstall-service.exe\" -Wait -Verb 'RunAs' -WindowStyle 'Hidden'; Start-Sleep -Seconds 3"
+        "Start-Process \"$dir\\resources\\clash-verge-service-uninstall.exe\" -Wait -Verb 'RunAs' -WindowStyle 'Hidden'; Start-Sleep -Seconds 3"
     ],
-    "shortcuts": [
-        [
-            "clash-verge.exe",
-            "Clash Verge"
-        ]
-    ],
+    "shortcuts": [["clash-verge.exe", "Clash Verge"]],
     "checkver": "github",
     "autoupdate": {
         "architecture": {
