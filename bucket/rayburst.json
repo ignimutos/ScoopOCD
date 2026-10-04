@@ -12,18 +12,18 @@
     "pre_install": "Remove-Item \"$dir\\`$PLUGINSDIR\" -Recurse",
     "persist_link": [
         [
-            "$env:AppData\\com.motrix.next",
+            "$env:AppData\\dev.aninsomniacy.rayburst",
             "AppData"
         ],
         [
-            "$env:LocalAppData\\com.motrix.next",
+            "$env:LocalAppData\\dev.aninsomniacy.rayburst",
             "LocalAppData"
         ]
     ],
     "shortcuts": [
         [
             "rayburst.exe",
-            "Motrix Next"
+            "Rayburst"
         ]
     ],
     "checkver": {
