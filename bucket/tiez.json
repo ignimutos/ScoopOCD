@@ -13,7 +13,9 @@
     "persist": "data",
     "shortcuts": [["tiez-app.exe", "TieZ"]],
     "checkver": {
-        "github": "https://github.com/jimuzhe/tiez-clipboard"
+        "github": "https://api.github.com/repos/jimuzhe/tiez-clipboard/releases",
+        "jsonpath": "$[*].tag_name",
+        "regex": "\"v([\\d.]+)\""
     },
     "autoupdate": {
         "architecture": {

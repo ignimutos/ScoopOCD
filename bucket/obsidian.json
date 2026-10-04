@@ -31,7 +31,9 @@
         ]
     ],
     "checkver": {
-        "github": "https://github.com/obsidianmd/obsidian-releases"
+        "github": "https://api.github.com/repos/obsidianmd/obsidian-releases/releases",
+        "jsonpath": "$[*].assets[*].name",
+        "regex": "Obsidian-([\\d.]+)\\.exe"
     },
     "autoupdate": {
         "url": "https://github.com/obsidianmd/obsidian-releases/releases/download/v$version/Obsidian-$version.exe#/dl.7z"

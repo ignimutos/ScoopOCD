@@ -30,7 +30,7 @@
     "persist_link": "$env:LocalAppData\\Chromium",
     "checkver": {
         "github": "https://github.com/ungoogled-software/ungoogled-chromium-windows",
-        "regex": "releases/tag/((?<main>[\\d.]+-\\d).(?<release>\\d))"
+        "regex": "((?<main>[\\d.]+-\\d)\\.(?<release>\\d))"
     },
     "autoupdate": {
         "architecture": {
