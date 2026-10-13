@@ -1,18 +1,18 @@
 {
     "$schema": "https://raw.githubusercontent.com/ScoopInstaller/Scoop/master/schema.json",
     "##": "Multiple components under various open source licenses. Included HTTPS Everywhere extension is the strictest.",
-    "version": "15.0.24",
+    "version": "15.0.25",
     "description": "Web browser that connects to the internet via the Tor anonymity network",
     "homepage": "https://www.torproject.org/",
     "license": "GPL-3.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://archive.torproject.org/tor-package-archive/torbrowser/15.0.24/tor-browser-windows-x86_64-portable-15.0.24.exe",
-            "hash": "a549824c31dd9ee8143ecc6bc97b8f2d5fd5cba8b13f528f1444a0b769758c6c"
+            "url": "https://archive.torproject.org/tor-package-archive/torbrowser/15.0.25/tor-browser-windows-x86_64-portable-15.0.25.exe",
+            "hash": "948f79f7312c7b62dffeb1d65a51d49ea6bcb22b47b271fdd2edee9d5e22d561"
         },
         "32bit": {
-            "url": "https://archive.torproject.org/tor-package-archive/torbrowser/15.0.24/tor-browser-windows-i686-portable-15.0.24.exe",
-            "hash": "d30acc71e3413a58b6f405421e72cf222e6633576ffa9e95750f3f56821668b8"
+            "url": "https://archive.torproject.org/tor-package-archive/torbrowser/15.0.25/tor-browser-windows-i686-portable-15.0.25.exe",
+            "hash": "06ebb5051cd074e0cab2c1cdfad453a2212c8be286a70a7030744550b11c8863"
         }
     },
     "pre_install": [
