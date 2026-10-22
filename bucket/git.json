@@ -6,9 +6,9 @@
     "notes": [
         "Set Git Credential Manager Core by running: \"git config --global credential.helper manager\"",
         "",
-        "To add context menu entries, run '$dir\\install-context.reg'",
+        "To add context menu entries, run 'reg import \"$dir\\install-context.reg\"'",
         "",
-        "To create file-associations for .git* and .sh files, run '$dir\\install-file-associations.reg'"
+        "To create file-associations for .git* and .sh files, run 'reg import \"$dir\\install-associations.reg\"'"
     ],
     "architecture": {
         "64bit": {
@@ -21,20 +21,22 @@
         }
     },
     "post_install": [
-        "'install-context', 'uninstall-context', 'install-file-associations', 'uninstall-file-associations' | ForEach-Object {",
-        "    $reg_file_in  = \"$bucketsdir\\main\\scripts\\git\\$_.reg\"",
-        "    $reg_file_out = \"$dir\\$_.reg\"",
-        "    $git_root     = \"$dir\".Replace('\\', '\\\\')",
-        "    if (Test-Path $reg_file_in) {",
-        "        $content = Get-Content $reg_file_in",
-        "        $content = $content.Replace('$git_root', $git_root)",
-        "        if ($global) {",
-        "            $content = $content.Replace('HKEY_CURRENT_USER', 'HKEY_LOCAL_MACHINE')",
-        "        }",
-        "        Set-Content -Path $reg_file_out -Value $content -Encoding Ascii",
-        "    }",
+        "$git_path = $dir -replace '\\\\', '\\\\'",
+        "Get-ChildItem -Path \"$bucketsdir\\$bucket\\scripts\\$app\" -Filter '*.reg' -File | ForEach-Object {",
+        "    $content = Get-Content -Path $_.FullName -Encoding utf8",
+        "    if ($global) { $content = $content -replace 'HKEY_CURRENT_USER', 'HKEY_LOCAL_MACHINE' }",
+        "    $content -replace '{{git_dir}}', $git_path | Set-Content -Path \"$dir\\$($_.Name)\" -Encoding unicode",
         "}"
     ],
+    "uninstaller": {
+        "script": [
+            "# $cmd comes from exec in lib/commands.ps1; update also runs this script",
+            "if ($cmd -eq 'uninstall') {",
+            "    reg import \"$dir\\uninstall-context.reg\" *> $null",
+            "    reg import \"$dir\\uninstall-associations.reg\" *> $null",
+            "}"
+        ]
+    },
     "persist": "etc",
     "bin": [
         "bin\\sh.exe",

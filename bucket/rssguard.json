@@ -16,7 +16,7 @@
             "hash": "d66e715282c8ba69c498d1c4ca8e6990271c531d3ee6fabef401b3238983d6e9"
         }
     },
-    "pre_install": "Remove-Item \"$dir\\vc_redis*\"",
+    "pre_install": "Remove-InstallerResidue -Include 'vc_redis*'",
     "shortcuts": [
         [
             "rssguard.exe",

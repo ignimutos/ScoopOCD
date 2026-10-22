@@ -9,7 +9,7 @@
             "hash": "93d3fc70477ab70e627289ea4fab8c7901f4383e0f56eca81cc59c9ff9ce594a"
         }
     },
-    "pre_install": "Remove-Item \"$dir\\`$PLUGINSDIR\" -Recurse",
+    "pre_install": "Remove-InstallerResidue",
     "persist_link": [
         [
             "$env:AppData\\dev.aninsomniacy.rayburst",

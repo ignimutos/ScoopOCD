@@ -34,10 +34,9 @@
             "Remove-Item \"$dir\\$fname\", \"$installer\", \"$dir\\{app}\""
         ]
     },
-    "post_install": "reg import \"$persist_dir\\settings.reg\"",
+    "post_install": "Restore-AppRegistry -Map @{ 'settings.reg' = 'HKCU\\Software\\Cheat Engine' }",
     "post_uninstall": [
-        "reg export 'HKCU\\Software\\Cheat Engine' \"$persist_dir\\settings.reg\" /y",
-        "reg delete 'HKCU\\Software\\Cheat Engine' /f"
+        "Save-AppRegistry -Map @{ 'settings.reg' = 'HKCU\\Software\\Cheat Engine' } -Delete"
     ],
     "checkver": {
         "url": "https://www.cheatengine.org/downloads.php",

@@ -12,16 +12,7 @@
         "filetypesman_lng.ini",
         "filetypesman.cfg"
     ],
-    "pre_install": [
-        "foreach ($file in @('filetypesman.cfg', 'filetypesman_lng.ini')) {",
-        "    if ((Test-Path \"$persist_dir\\$file\" -PathType Container) -and !(Get-ChildItem \"$persist_dir\\$file\" -Force)) {",
-        "        Remove-Item \"$persist_dir\\$file\" -Force",
-        "    }",
-        "    if (!(Test-Path \"$persist_dir\\$file\")) {",
-        "        New-Item -ItemType File \"$dir\\$file\" | Out-Null",
-        "    }",
-        "}"
-    ],
+    "pre_install": "Initialize-PersistedFile -Path 'filetypesman.cfg', 'filetypesman_lng.ini'",
     "architecture": {
         "64bit": {
             "url": "https://www.nirsoft.net/utils/filetypesman-x64.zip",

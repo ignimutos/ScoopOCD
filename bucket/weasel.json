@@ -23,7 +23,12 @@
         ]
     },
     "post_install": [
-        "Remove-Item \"$dir\\`$PLUGINSDIR\" -Force -Recurse",
+        "Remove-InstallerResidue",
+        "Restore-AppRegistry -Map @{ 'weasel.reg' = 'HKCU\\Software\\Rime\\Weasel' }",
+        "$REG_PATH='HKCU:\\Software\\Rime\\Weasel'",
+        "if (!(Test-Path \"$REG_PATH\\Updates\")) { New-Item -Path \"$REG_PATH\\Updates\" -Force | Out-Null }",
+        "Set-ItemProperty -Path \"$REG_PATH\\Updates\" -Name 'CheckForUpdates' -Value 0 -Type String -Force",
+        "Set-ItemProperty -Path \"$REG_PATH\" -Name 'RimeUserDir' -Value \"$persist_dir\" -Type String -Force",
         "Start-Process \"$dir\\WeaselDeployer.exe\" -ArgumentList '/deploy' -Wait"
     ],
     "bin": [
@@ -60,6 +65,7 @@
     ],
     "uninstaller": {
         "script": [
+            "Save-AppRegistry -Map @{ 'weasel.reg' = 'HKCU\\Software\\Rime\\Weasel' }",
             "Start-Process \"$dir\\WeaselSetup.exe\" -ArgumentList '/u' -Wait",
             "Remove-Item -Path 'HKCU:\\Software\\Rime\\Weasel' -Force -Recurse | Out-Null"
         ]

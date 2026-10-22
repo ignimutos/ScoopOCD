@@ -10,17 +10,17 @@
     "hash": "28662520368d5956df7798076b8370ac730164a8863dcd4f678ced53f63faa00",
     "architecture": {
         "64bit": {
-            "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\""
+            "pre_install": "Expand-SquirrelApp"
         },
         "32bit": {
-            "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-32.7z\" \"$dir\""
+            "pre_install": "Expand-SquirrelApp"
         },
         "arm64": {
-            "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-arm64.7z\" \"$dir\""
+            "pre_install": "Expand-SquirrelApp"
         }
     },
     "post_install": [
-        "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\`$R0\" -Force -Recurse",
+        "Remove-InstallerResidue -Include '$R0'",
         "Set-Value 'User Data\\obsidian.json' 'updateDisabled' $true"
     ],
     "shortcuts": [

@@ -12,9 +12,7 @@
     "shortcuts": [["SteamAutoCrack.exe", "SteamAutoCrack"]],
     "pre_install": [
         "$lang = if ([System.Globalization.CultureInfo]::InstalledUICulture.Name -like 'zh*') { 1 } else { 0 }",
-        "if (!(Test-Path \"$persist_dir\\config.json\")) {",
-        "    @{ Language = $lang } | ConvertTo-Json -Compress | Out-UTF8File \"$dir\\config.json\"",
-        "}"
+        "Initialize-PersistedFile -Path 'config.json' -Content (@{ Language = $lang } | ConvertTo-Json -Compress)"
     ],
     "persist": ["Goldberg", "TEMP", "config.json"],
     "checkver": "github",

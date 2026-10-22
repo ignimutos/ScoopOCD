@@ -12,12 +12,7 @@
             "hash": "e4e551bc4f626fef5b14c6a800ff6a1c8d8348c6546b8aa4cd5bc10727ce9530"
         }
     },
-    "pre_install": [
-        "if (!(Test-Path \"$persist_dir\\config.yml\")) {",
-        "   New-Item \"$dir\\config.yml\" | Out-Null",
-        "   Add-Content -Path \"$dir\\config.yml\" -Value \"pref-path: $persist_dir\\pref\"-Encoding UTF8",
-        "}"
-    ],
+    "pre_install": "Initialize-PersistedFile -Path 'config.yml' -Content \"pref-path: $persist_dir\\pref\"",
     "bin": "Vita3K.exe",
     "shortcuts": [
         [

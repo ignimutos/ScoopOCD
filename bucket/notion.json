@@ -11,8 +11,8 @@
             "url": "https://desktop-release.notion-static.com/Notion%20Setup%207.40.0.exe#/dl.7z",
             "hash": "sha512:9978654043ef00695f9c6951bbed6810492c3dcf6c5d76d413bb36c0e9ffd248f528a616318bc40a5f7348fac58a78563691ec5993fdfae1dbd7d739f85280c3",
             "pre_install": [
-                "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
-                "Remove-Item \"$dir\\`$*\" -Recurse"
+                "Expand-SquirrelApp",
+                "Remove-InstallerResidue -Include '$*'"
             ]
         }
     },

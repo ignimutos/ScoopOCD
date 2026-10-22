@@ -16,11 +16,7 @@
             "AiNiee"
         ]
     ],
-    "pre_install": [
-        "ensure $persist_dir | Out-Null",
-        "New-Item -ItemType File \"$dir\\Resource\\config.json\" | Out-Null",
-        "Set-Content \"$dir\\Resource\\config.json\" '{}'"
-    ],
+    "pre_install": "Initialize-PersistedFile -Path 'Resource\\config.json' -PersistPath 'config.json' -Content '{}'",
     "persist": [
         [
             "Resource\\config.json",
