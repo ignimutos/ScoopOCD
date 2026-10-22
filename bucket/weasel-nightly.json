@@ -3,7 +3,7 @@
     "description": "基於 中州韻輸入法引擎／Rime Input Method Engine 等開源技術",
     "homepage": "https://rime.im/",
     "license": "GPL-3.0-only",
-    "notes": "",
+    "notes": "更新或卸载前请先退出 Weasel (托盘菜单 - 退出), 否则文件被占用会导致操作失败。",
     "architecture": {
         "64bit": {
             "url": "https://github.com/rime/weasel/releases/download/latest/weasel-0.17.4.95.82b50c9-installer.exe#/dl.7z",
@@ -58,10 +58,6 @@
             "WeaselDeployer.exe",
             "WeaselDeployer"
         ]
-    ],
-    "pre_uninstall": [
-        "Stop-Process -Name 'WeaselServer' -ErrorAction SilentlyContinue",
-        "Wait-Process -Name 'WeaselServer' -ErrorAction SilentlyContinue -Timeout 30"
     ],
     "uninstaller": {
         "script": [
