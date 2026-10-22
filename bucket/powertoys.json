@@ -73,7 +73,7 @@
             "    $regpath = $regpath.Replace('HKCU', 'HKLM')",
             "}",
             "if (Test-Path -Path $regpath) {",
-            "    & \"$dir\\uninstall-context.ps1\"",
+            "& \"$dir\\uninstall-context.ps1\"",
             "    if ($cmd -ne 'uninstall') {",
             "        New-Item -Path $regpath -Force | Out-Null",
             "    }",
