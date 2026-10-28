@@ -1,5 +1,5 @@
 {
-    "version": "0.102.3001.0",
+    "version": "0.103.3006.0",
     "description": "A set of utilities for power users to tune and streamline their Windows experience for greater productivity.",
     "homepage": "https://github.com/microsoft/PowerToys",
     "license": "MIT",
@@ -12,12 +12,12 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/microsoft/PowerToys/releases/download/v0.102.3001/PowerToysUserSetup-0.102.3001.0-x64.exe",
-            "hash": "4459b9f1ad5d70a342e109ffb66dbbb08ea07b2d2ec5634b314f878700f9ff0b"
+            "url": "https://github.com/microsoft/PowerToys/releases/download/v0.103.3006/PowerToysUserSetup-0.103.3006.0-x64.exe",
+            "hash": "dfeb0cc4020dcf501206ce796ddee4f03ba705a53829fb91269b4a604a7a19cb"
         },
         "arm64": {
-            "url": "https://github.com/microsoft/PowerToys/releases/download/v0.102.3001/PowerToysUserSetup-0.102.3001.0-arm64.exe",
-            "hash": "074208c93541be77bb6e875d436a8a765e21649f2613196cee62d9ca936611f2"
+            "url": "https://github.com/microsoft/PowerToys/releases/download/v0.103.3006/PowerToysUserSetup-0.103.3006.0-arm64.exe",
+            "hash": "20a2286ff3f1dea00a3721d3d8e03756377bb357eb895e8dc005e6207e5537a0"
         }
     },
     "persist_link": [
