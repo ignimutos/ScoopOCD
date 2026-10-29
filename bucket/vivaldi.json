@@ -1,19 +1,19 @@
 {
     "homepage": "https://vivaldi.com",
-    "version": "8.2.4133.94",
+    "version": "8.2.4133.96",
     "license": "https://vivaldi.com/zh-hans/privacy/vivaldi-end-user-license-agreement",
     "architecture": {
         "64bit": {
-            "url": "https://downloads.vivaldi.com/stable/Vivaldi.8.2.4133.94.x64.exe",
-            "hash": "6f2eee78fd43c9cb5d04150487aa786625c3361c96c43e6032f753909850a893"
+            "url": "https://downloads.vivaldi.com/stable/Vivaldi.8.2.4133.96.x64.exe",
+            "hash": "cd3374dbbffe20ccc8dd1f621c171831ae4e79548af1d41db4dadadf3decb034"
         },
         "32bit": {
-            "url": "https://downloads.vivaldi.com/stable/Vivaldi.8.2.4133.94.exe",
-            "hash": "7433061b3ed88ef1893a6e61fb55c50b48a96ee1d78c557d259f879c9dbbf78b"
+            "url": "https://downloads.vivaldi.com/stable/Vivaldi.8.2.4133.96.exe",
+            "hash": "86a7c228916419d05018def72b25da67f837fe3e1e25eb06e2f28ea1bb0a1496"
         },
         "arm64": {
-            "url": "https://downloads.vivaldi.com/stable/Vivaldi.8.2.4133.94.arm64.exe",
-            "hash": "b7893121fc64bae3fff02e35d25f7fd7cee24bdce280d3c61ba4198bda889c4d"
+            "url": "https://downloads.vivaldi.com/stable/Vivaldi.8.2.4133.96.arm64.exe",
+            "hash": "278d60218aee89f538c3d7e56e5133f749d6e9a2799fd2b8b2664b21bb03bdf1"
         }
     },
     "persist": "User Data",
