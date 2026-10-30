@@ -1,5 +1,5 @@
 {
-    "version": "2.17.0",
+    "version": "2.18.0",
     "description": "A free, minimalist, lightweight, and high-performance C-drive cleanup tool.",
     "homepage": "https://www.lightc.app/",
     "license": {
@@ -12,8 +12,8 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/Chunyu33/light-c/releases/download/v2.17.0/LightC_portable_x64_v2.17.0.zip",
-            "hash": "6ca661484230db9ad1ac24bdd9d0eee9ef1ee616f7cf003ee175f658f2fa14ad"
+            "url": "https://github.com/Chunyu33/light-c/releases/download/v2.18.0/LightC_portable_x64_v2.18.0.zip",
+            "hash": "b53e0df42591d976ae9a798ba839fd31d59bcd0c623740d640b74863ccd4fc42"
         }
     },
     "persist": [
