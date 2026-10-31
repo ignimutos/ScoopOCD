@@ -1,13 +1,13 @@
 {
-    "version": "0.17.4.95.82b50c9",
+    "version": "0.17.4.98.f96ed24",
     "description": "基於 中州韻輸入法引擎／Rime Input Method Engine 等開源技術",
     "homepage": "https://rime.im/",
     "license": "GPL-3.0-only",
     "notes": "更新或卸载前请先退出 Weasel (托盘菜单 - 退出), 否则文件被占用会导致操作失败。",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/rime/weasel/releases/download/latest/weasel-0.17.4.95.82b50c9-installer.exe#/dl.7z",
-            "hash": "7bd880bc9ec59710f29caf781046d0ec41fe11805862c53a85e4e8b2fe4daf3e"
+            "url": "https://github.com/rime/weasel/releases/download/latest/weasel-0.17.4.98.f96ed24-installer.exe#/dl.7z",
+            "hash": "ea4cbc174ff74dfc6c8b61c1e2a348d63698042e360f4db3a708ed2bfce62a0f"
         }
     },
     "persist": "data",
