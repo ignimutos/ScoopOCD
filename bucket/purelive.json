@@ -11,32 +11,8 @@
         }
     },
     "persist": "UserData",
-    "post_install": [
-        "$run = 'HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Run'",
-        "$approved = 'HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run'",
-        "$mark = \"$persist_dir\\autostart\"",
-        "if (Test-Path $mark) {",
-        "    New-ItemProperty $run -Name 'PureLiveV4' -Value ('\"{0}\"' -f \"$dir\\pure_live.exe\") -PropertyType String -Force | Out-Null",
-        "    if (Test-Path \"$mark-approved\") {",
-        "        if (!(Test-Path $approved)) { New-Item $approved | Out-Null }",
-        "        $bytes = [byte[]]@((Get-Content \"$mark-approved\" -Raw).Trim() -split ',')",
-        "        New-ItemProperty $approved -Name 'PureLiveV4' -Value $bytes -PropertyType Binary -Force | Out-Null",
-        "    }",
-        "    Remove-Item $mark, \"$mark-approved\" -Force -ErrorAction SilentlyContinue",
-        "}"
-    ],
-    "post_uninstall": [
-        "$run = 'HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Run'",
-        "$approved = 'HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run'",
-        "$backup = ensure $persist_dir",
-        "Remove-Item \"$backup\\autostart*\" -Force -ErrorAction SilentlyContinue",
-        "if (Get-ItemProperty $run -Name 'PureLiveV4' -ErrorAction SilentlyContinue) {",
-        "    Set-Content \"$backup\\autostart\" '1'",
-        "    if ($value = Get-ItemProperty $approved -Name 'PureLiveV4' -ErrorAction SilentlyContinue) { Set-Content \"$backup\\autostart-approved\" ($value.PureLiveV4 -join ',') }",
-        "}",
-        "Remove-ItemProperty $run -Name 'PureLiveV4' -ErrorAction SilentlyContinue",
-        "Remove-ItemProperty $approved -Name 'PureLiveV4' -ErrorAction SilentlyContinue"
-    ],
+    "post_install": "Restore-RegistryEntry -Map @{ 'run.json' = 'HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\PureLiveV4' } -Path \"$dir\\pure_live.exe\"",
+    "post_uninstall": "Save-RegistryEntry -Map @{ 'run.json' = 'HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\PureLiveV4' } -Delete",
     "shortcuts": [
         [
             "pure_live.exe",
